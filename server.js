@@ -36,7 +36,6 @@ const coleccion = db.collection("actividades");
 app.post("/alta", async (req, res) => {
   try {
     const actividad = req.body;
-    // Aquí asume que id_actividad es único, validamos que no exista
     const existe = await coleccion.findOne({ id_actividad: actividad.id_actividad });
     if (existe) {
       return res.status(400).json({ error: "El ID de actividad ya existe." });
@@ -52,7 +51,7 @@ app.post("/alta", async (req, res) => {
 app.post("/baja", async (req, res) => {
   try {
     const { id_actividad } = req.body;
-    const resultado = await coleccion.deleteOne({ id_actividad: id_actividad });
+    const resultado = await coleccion.deleteOne({ id_actividad });
     if (resultado.deletedCount === 0) {
       return res.status(404).json({ error: "No se encontró la actividad con ese ID." });
     }
@@ -69,8 +68,15 @@ app.post("/actualizar", async (req, res) => {
     if (!id_actividad || !campo || nuevo_valor === undefined) {
       return res.status(400).json({ error: "Faltan datos para la actualización." });
     }
+
+    // Solo permitir campos existentes
+    const camposValidos = ["tipo", "nombre", "responsable", "participantes", "fecha", "estatus"];
+    if (!camposValidos.includes(campo)) {
+      return res.status(400).json({ error: "Campo no válido para actualizar." });
+    }
+
     const update = { $set: { [campo]: nuevo_valor } };
-    const resultado = await coleccion.updateOne({ id_actividad: id_actividad }, update);
+    const resultado = await coleccion.updateOne({ id_actividad }, update);
     if (resultado.matchedCount === 0) {
       return res.status(404).json({ error: "No se encontró la actividad con ese ID." });
     }
