@@ -1,117 +1,103 @@
-/* Fondo y texto */
-body {
-  background-color: #f9e6f7; /* Rosa muy claro */
-  color: #5a2a5c; /* Morado oscuro */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body.bg-pink-light {
+  background-color: #ffd6e8; /* rosa claro */
+  color: #4b004b; /* morado oscuro para texto */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
-/* Encabezados */
-h1, h2, h3, h4, h5, h6 {
-  color: #a64ca6; /* Rosa fuerte */
-  text-shadow: 1px 1px 2px #d8a1d8;
+.titulo-pagina {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  color: #d6336c; /* rosa fuerte */
+  text-align: center;
 }
 
-/* Enlaces */
-a {
-  color: #b359b3;
+.btn-rosa {
+  background-color: #d6336c;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 15px 0;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: block;
+}
+
+.btn-rosa:hover {
+  background-color: #a82a54;
+  color: #fff;
   text-decoration: none;
 }
 
-a:hover {
-  color: #d16ed1;
-  text-decoration: underline;
-}
+/* Para los demás botones que necesites, por ejemplo: */
 
-/* Botones personalizados */
-.btn-pink {
-  background-color: #bf5f9a; /* Rosa medio */
-  border-color: #bf5f9a;
-  color: white;
+.btn-volver {
+  background-color: #ff8ac9;
+  border: none;
+  color: #4b004b;
   font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 15px;
   transition: background-color 0.3s ease;
+  margin-top: 20px;
+  display: inline-block;
 }
 
-.btn-pink:hover, .btn-pink:focus {
-  background-color: #d877b4; /* Rosa claro */
-  border-color: #d877b4;
+.btn-volver:hover {
+  background-color: #e671b1;
   color: white;
-  outline: none;
+  text-decoration: none;
 }
 
-/* Botones secundarios */
-.btn-secondary {
-  background-color: #754974; /* Morado oscuro */
-  border-color: #754974;
-  color: white;
-  font-weight: 600;
+/* Contenedores para formularios y tablas: */
+
+.container {
+  background-color: #fff0f6;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #f8c1dc;
+  max-width: 800px;
+  margin: auto;
 }
 
-.btn-secondary:hover, .btn-secondary:focus {
-  background-color: #90618a;
-  border-color: #90618a;
-  color: white;
-  outline: none;
+h2, h3 {
+  color: #d6336c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table {
+  color: #4b004b;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #ffe6f0;
 }
 
 /* Formularios */
+
 .form-label {
-  color: #5a2a5c;
+  color: #d6336c;
   font-weight: 600;
 }
 
 .form-control, .form-select {
-  background-color: #f3d5f0; /* Rosa muy claro */
-  border: 1px solid #bf5f9a;
-  color: #5a2a5c;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: #fff0f6;
+  border: 1px solid #d6336c;
+  color: #4b004b;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .form-control:focus, .form-select:focus {
-  background-color: #e1a9de;
-  border-color: #d877b4;
-  color: #3a0e3a;
-  box-shadow: 0 0 8px #d877b4;
-  outline: none;
-}
-
-/* Tablas */
-.table {
-  color: #5a2a5c;
-  background-color: #f9e6f7;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 0 10px #d8a1d8;
-}
-
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f3c9e9;
-}
-
-.table-striped > tbody > tr:nth-of-type(even) {
-  background-color: #f8d6f3;
-}
-
-.table thead th {
-  background-color: #bf5f9a;
+  background-color: #d6336c;
   color: white;
-  border: none;
-}
-
-/* Contenedor */
-.container {
-  background-color: #f3d5f0;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #c178b1;
-}
-
-/* Responsive tweaks */
-@media (max-width: 576px) {
-  .container {
-    padding: 15px;
-  }
-  .btn-lg {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
+  border-color: #a82a54;
+  box-shadow: 0 0 8px #a82a54;
+  outline: none;
 }
