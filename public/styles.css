@@ -1,0 +1,117 @@
+/* Fondo y texto */
+body {
+  background-color: #f9e6f7; /* Rosa muy claro */
+  color: #5a2a5c; /* Morado oscuro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: #a64ca6; /* Rosa fuerte */
+  text-shadow: 1px 1px 2px #d8a1d8;
+}
+
+/* Enlaces */
+a {
+  color: #b359b3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d16ed1;
+  text-decoration: underline;
+}
+
+/* Botones personalizados */
+.btn-pink {
+  background-color: #bf5f9a; /* Rosa medio */
+  border-color: #bf5f9a;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pink:hover, .btn-pink:focus {
+  background-color: #d877b4; /* Rosa claro */
+  border-color: #d877b4;
+  color: white;
+  outline: none;
+}
+
+/* Botones secundarios */
+.btn-secondary {
+  background-color: #754974; /* Morado oscuro */
+  border-color: #754974;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #90618a;
+  border-color: #90618a;
+  color: white;
+  outline: none;
+}
+
+/* Formularios */
+.form-label {
+  color: #5a2a5c;
+  font-weight: 600;
+}
+
+.form-control, .form-select {
+  background-color: #f3d5f0; /* Rosa muy claro */
+  border: 1px solid #bf5f9a;
+  color: #5a2a5c;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #e1a9de;
+  border-color: #d877b4;
+  color: #3a0e3a;
+  box-shadow: 0 0 8px #d877b4;
+  outline: none;
+}
+
+/* Tablas */
+.table {
+  color: #5a2a5c;
+  background-color: #f9e6f7;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #d8a1d8;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f3c9e9;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #f8d6f3;
+}
+
+.table thead th {
+  background-color: #bf5f9a;
+  color: white;
+  border: none;
+}
+
+/* Contenedor */
+.container {
+  background-color: #f3d5f0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #c178b1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .container {
+    padding: 15px;
+  }
+  .btn-lg {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
